@@ -1,0 +1,25 @@
+# training/multimodal/config.yaml
+
+run_name: "MMIBC_Fusion_v1"
+
+data:
+  csv_path: "C:/Users/konyang/Desktop/MMIBC-main/mmibc/multimodal_pairs.csv"
+
+models:
+  unimodal_config_path: "C:/Users/konyang/Desktop/MMIBC-main/src/training/dinov2/unimodal_model/config.yaml"
+  us_model_path: "C:/Users/konyang/Desktop/MMIBC-main/saved_models/best_model_final.pth"
+  mammo_model_path: "C:/Users/konyang/Desktop/MMIBC-main/saved_models/best_mammo_model_final.pth"
+
+training:
+  image_size: 224
+  batch_size: 8
+  epochs: 50
+  learning_rate: 0.001
+  early_stopping:
+    patience: 25
+    mode: "min"
+    min_delta: 0.0001
+
+output:
+  model_save_path: "C:/Users/konyang/Desktop/MMIBC-main/saved_models"
+  tensorboard_log_dir: "C:/Users/konyang/Desktop/MMIBC-main/runs"
